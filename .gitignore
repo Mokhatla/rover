@@ -1,0 +1,13 @@
+# Ignore all logfiles and tempfiles.
+/log/*
+!/log/.keep
+/tmp
+.DS_Store
+/.DS_Store
+
+# Ignore local development Dragonfly uploads
+/public/system/dragonfly/development/
+
+# ignore IDE
+.idea
+/.idea
