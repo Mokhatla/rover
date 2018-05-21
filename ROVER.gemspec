@@ -3,8 +3,8 @@ lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
-  spec.name          = "ROVER"
-  spec.version       = '0.1'
+  spec.name          = "rover"
+  spec.version       = '0.0.1'
   spec.authors       = ["Retsilisitsoe Mokhatla"]
   spec.email         = ["mokhatla@hotmail.com"]
   spec.summary       = %q{Mars Rover Challenge}
@@ -12,8 +12,8 @@ Gem::Specification.new do |spec|
   spec.homepage      = "http://www.4tastesa.com/"
   spec.license       = "MIT"
 
-  spec.files         = ['lib/ROVER.rb']
-  spec.executables   = ['bin/ROVER']
-  spec.test_files    = ['tests/test_ROVER.rb']
+  spec.files         = ['lib/rover.rb']
+  spec.executables   = ['bin/rover']
+  spec.test_files    = ['tests/test_rover.rb']
   spec.require_paths = ["lib"]
 end

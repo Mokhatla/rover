@@ -1,0 +1,47 @@
+#!/usr/bin/env ruby
+require './lib/rover'
+
+puts "-*--*--*--*--*--*--*--*--*--*--*--*--*--*--"
+puts "Welcome to Mars Rover Deployment Console..."
+puts "-*--*--*--*--*--*--*--*--*--*--*--*--*--*--"
+puts
+puts "Do you want to use your own data file (.txt format)? (Y/N)"
+puts
+use_own_file = gets.chomp
+puts
+if use_own_file.strip.upcase == "Y"
+  # use path ./data/file_name.txt
+  puts "Please enter the the path to the Instruction File: "
+  puts
+  my_file = gets.chomp
+else
+  my_file = './data/test.txt'
+end
+puts
+
+begin
+  puts "Locating file..."
+  puts "..."
+  deployment_instructions = File.readlines(my_file)
+rescue
+  puts "Sorry. There was a problem locating the Instruction File..."
+end
+
+if deployment_instructions
+  grid = deployment_instructions[0].split("")
+  puts "The plateau size is #{grid[0]}x#{grid[1]}"
+  puts
+  collect_rovers = deployment_instructions[1..-1]
+
+  rovers = []
+  deployed_rovers = []
+  collect_rovers.each_slice(2) { |data| rovers << data }
+  puts
+
+  rovers.each do |rover|
+    deployed_rovers << deploy_rover(rover[0], rover[1], grid)
+  end
+end
+puts "-*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*-"
+puts "The deployment console has been closed. Goodbye!"
+puts "-*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*-"
