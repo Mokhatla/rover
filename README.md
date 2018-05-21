@@ -4,11 +4,13 @@
 Place the instruction data into a .txt file and place that file in the /data directory. When prompted, use ./data/file_name.txt to use that data. If you do not use your own test data, the default test data file will be used.
 
 cd into rover
+
 bin/rover
 
 OR
 
 cd into rover
+
 rake test
 
 ## Assumptions
